@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'about', to: 'about#index'
-
   root 'main#index'
+  get 'about_us', to: 'about#index', as: :about
 end
