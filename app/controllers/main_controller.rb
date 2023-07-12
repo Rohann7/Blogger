@@ -1,5 +1,6 @@
 class MainController < ApplicationController
   def index
-    render
+    flash[:notice] = "Success"
+    flash[:alert] = "Pre-success"
   end
 end
