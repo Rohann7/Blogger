@@ -1,3 +1,10 @@
 <div class="d-flex align-items-center justify-content-center">
   <h1>Welcome to SocialSlate</h1>
 </div>
+
+<% if @user %>
+  Signed in as <%= @user.email %>
+
+  <%= button_to 'Logout', logout_path, method: :delete %>
+<% end %>
+
