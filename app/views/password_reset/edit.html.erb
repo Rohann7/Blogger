@@ -1,6 +1,6 @@
-<h2>Edit Password</h2>
+<h2>Reset Password</h2>
 
-<%= form_with model: Current.user, url: edit_password_path do |form| %>
+<%= form_with model: @user, url: password_reset_edit_path(token: params[:token]) do |form| %>
   <% if form.object.errors.any? %>
     <div class="alert alert-danger" role="alert">
       <% form.object.errors.full_messages.each do |message| %>
@@ -9,14 +9,15 @@
     </div>
   <% end %>
   <div class="mb-3">
-    <%= form.label 'Password' %>  
+    <%= form.label 'Enter your new password' %>  
     <%= form.password_field :password, class: 'form-control', placeholder: 'Enter your password'  %>
   </div>
   <div class="mb-3">
-    <%= form.label 'Password Confirmation' %>  
+    <%= form.label 'New password confirmation' %>  
     <%= form.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirm your password' %>
   </div>
+
   <div class="mb-3">
-    <%= form.submit 'Update password', class: 'btn btn-primary' %>
+    <%= form.submit 'Reset Password', class: 'btn btn-primary' %>
   </div>
 <% end %>
