@@ -10,7 +10,7 @@ class OmniauthCallbacksController < ApplicationController
       secret: auth.credentials.secret,
     )
 
-    redirect_to roo_path, notice: 'Success'
+    redirect_to root_path, notice: 'Success'
   end
 
   def auth
